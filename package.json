@@ -1,0 +1,44 @@
+{
+  "name": "nist-et-data-collector",
+  "version": "0.0.1",
+  "description": "Collection server for nist-et",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node -r @std/esm -r module-alias/register src/index.js",
+    "dev": "nodemon -r @std/esm -r module-alias/register src/index.js --exec \"yarn test && node\" | pino-pretty -c",
+    "test": "eslint src/**.js"
+  },
+  "@std/esm": "cjs",
+  "_moduleAliases": {
+    "~~": ".",
+    "~": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Jasper Palfree",
+  "license": "MIT",
+  "dependencies": {
+    "@std/esm": "^0.26.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "express-promise-router": "^3.0.3",
+    "lodash": "^4.17.15",
+    "module-alias": "^2.2.2",
+    "pino": "^6.2.1",
+    "pino-http": "^5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.3",
+    "pino-pretty": "^4.0.0"
+  }
+}

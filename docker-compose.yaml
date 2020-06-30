@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  api:
+    build: '.'
+    volumes:
+      # for development
+      - ./:/app:ro
+      - ./files:/nist-et-files:rw
+    environment:
+      NODE_ENV: "development"
+      FILE_UPLOAD_LOCATION: "/nist-et-files"
+    ports:
+      - "8000:8000"
+    command: ["yarn", "dev"]
+
+
