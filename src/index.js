@@ -31,9 +31,7 @@ app.get('/', (req, res, next) => {
         var formData = new FormData()
         var blob = new Blob(['hello world'], { type: "text/plain"})
         formData.append('dataFile', blob, "test.txt")
-        var request = new XMLHttpRequest()
-        request.open("POST", "http://localhost:8000/upload")
-        request.send(formData)
+        fetch("http://localhost:8000/upload", { method: "POST", body: formData })
       })
       </script>
     </body>
