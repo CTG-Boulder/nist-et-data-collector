@@ -3,8 +3,12 @@ version: '3.1'
 services:
   api:
     build: '.'
+    volumes:
+      - /home/qittlab/nist-et-files:/nist-et-files:rw
     environment:
       NODE_ENV: "production"
+      FILE_UPLOAD_LOCATION: "/nist-et-files"
     ports:
       - "8000:8000"
+    restart: always
     command: ["yarn", "start"]
